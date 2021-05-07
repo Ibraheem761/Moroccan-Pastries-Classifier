@@ -14,7 +14,7 @@ proj_path = 'Moroccan Pastries/'
 p_path = Path(proj_path)
 data = ImageDataBunch.from_folder(p_path, train=".", valid_pct=0.3,
         ds_tfms=get_transforms(), size=224, num_workers=4).normalize(imagenet_stats)
-learner = load_learner('95.pkl')
+learner = load_learner('export.pkl')
 
 option = st.radio('', ['Choose a test image', 'Choose your own image'])
 
