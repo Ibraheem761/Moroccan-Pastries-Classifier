@@ -10,7 +10,7 @@ html_temp = """
     """
 st.markdown(html_temp,unsafe_allow_html=True)
 
-path = Path('export.pkl')
+path = Path('')
 
 learner = load_learner('path')
 
