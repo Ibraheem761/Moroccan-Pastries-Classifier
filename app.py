@@ -14,8 +14,12 @@ proj_path = 'Moroccan Pastries images/'
 p_path = Path(proj_path)
 
 @st.cache(max_entries=10, ttl=3600)
-data = ImageDataBunch.from_folder(p_path, train=".", valid_pct=0.3,
+
+def data():
+    data = ImageDataBunch.from_folder(p_path, train=".", valid_pct=0.3,
         ds_tfms=get_transforms(), size=224, num_workers=4).normalize(imagenet_stats)
+    return data
+
 learner = load_learner('')
 
 option = st.radio('', ['Choose a test image', 'Choose your own image'])
