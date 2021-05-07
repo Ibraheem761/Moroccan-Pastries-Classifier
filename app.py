@@ -12,7 +12,7 @@ st.markdown(html_temp,unsafe_allow_html=True)
 
 path = Path('')
 
-learner = load_learner('path')
+learner = load_learner('')
 
 option = st.radio('', ['Choose a test image', 'Choose your own image'])
 
