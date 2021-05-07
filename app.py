@@ -12,6 +12,8 @@ st.markdown(html_temp,unsafe_allow_html=True)
 
 proj_path = 'Moroccan Pastries images/'
 p_path = Path(proj_path)
+
+@st.cache(max_entries=10, ttl=3600)
 data = ImageDataBunch.from_folder(p_path, train=".", valid_pct=0.3,
         ds_tfms=get_transforms(), size=224, num_workers=4).normalize(imagenet_stats)
 learner = load_learner('')
